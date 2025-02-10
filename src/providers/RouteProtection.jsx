@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../apifetch/axiosConfig";
+import { routes } from "../utilities/routes";
 const RouteProtection = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [isEmailVerified, setIsEmailVerified] = useState(null);
@@ -28,11 +29,11 @@ const RouteProtection = ({ children }) => {
   if (loading) return <div>Loading...</div>; // ✅ Show loading indicator while checking
 
   if (!isAuthenticated) {
-    return <Navigate to="/sign-in" replace />; // ✅ Redirect if not logged in
+    return <Navigate to={routes.authroutes.login} replace />; // ✅ Redirect if not logged in
   }
 
   if (isAuthenticated && !isEmailVerified) {
-    return <Navigate to={`/verify-email/${userId}`} replace />; // ✅ Redirect if email not verified
+    return <Navigate to={`${routes.authroutes.verifyemail}/${userId}`} replace />; // ✅ Redirect if email not verified
   }
 
   return children;

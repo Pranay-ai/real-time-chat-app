@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../apifetch/axiosConfig";
+import { routes } from "../utilities/routes";
 
 const EmailVerificationRoute = ({ children }) => {
   const [isEmailVerified, setIsEmailVerified] = useState(null);
@@ -25,7 +26,7 @@ const EmailVerificationRoute = ({ children }) => {
   if (loading) return <div>Loading...</div>; // ✅ Show loading while checking verification
 
   if (isEmailVerified) {
-    return <Navigate to="/" replace />; // ✅ Redirect if email is already verified
+    return <Navigate to={routes.authroutes.home} replace />; // ✅ Redirect if email is already verified
   }
 
   return children;

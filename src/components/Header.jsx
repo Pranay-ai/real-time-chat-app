@@ -3,6 +3,7 @@ import { useState } from "react";
 import { userSignOut } from "../apifetch/user-api-fetch";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { useNavigate } from "react-router";
+import { routes } from "../utilities/routes";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Header() {
   const handleLogout = async () => {
     try {
       await userSignOut();
-      navigate("/sign-in", {replace:true});
+      navigate(routes.authroutes.login, {replace:true});
 
       console.log("Logout Successful");
     } catch (error) {

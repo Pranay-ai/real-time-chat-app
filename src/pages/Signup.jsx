@@ -4,6 +4,7 @@ import personImage from "../assets/person.png";
 
 import { useCallback, useRef, useState } from "react";
 import { userSignup } from "../apifetch/user-api-fetch";
+import { routes } from "../utilities/routes";
 
 export default function Signup() {
   const navigate= useNavigate()
@@ -27,7 +28,7 @@ export default function Signup() {
 
       if(result.data.status){
 
-        navigate("/verify-email/"+result.data.data.id)
+        navigate(routes.authroutes.verifyemail+"/"+result.data.data.id)
 
       }
 
@@ -66,7 +67,7 @@ export default function Signup() {
 
   return (
     <div className="flex dark:bg-black bg-amber-50 items-center justify-center h-screen">
-   <div className="bg-slate-50 p-8 rounded-md shadow-lg shadow-black max-h-[70%] overflow-y-auto dark:shadow-amber-50 min-w-[30%] light-scrollbar dark:dark-scrollbar">
+   <div className="bg-slate-50 p-8 rounded-md shadow-lg shadow-black max-h-[70%] overflow-y-auto dark:shadow-amber-50 w-[90%] md:w-[60%] lg:w-[50%] xl:w-[30%] light-scrollbar dark:dark-scrollbar">
 
         <h1 className="text-3xl font-medium text-center">Sign Up</h1>
         <form className="mt-6" onSubmit={handleFormSubmit}>

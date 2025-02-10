@@ -4,6 +4,7 @@ import { useState } from "react";
 import { userLogin } from "../apifetch/user-api-fetch";
 import { setEmailVerified,setUser } from "../store/features/auth-feature";
 import LoadingIndicator from "../components/LoadingIndicator"
+import { routes } from "../utilities/routes";
 export default function SignIn() {
 
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ export default function SignIn() {
         dispatch(setEmailVerified(result.data.data.emailVerified));
         dispatch(setUser({ email: result.data.data.email, id: result.data.data.id }));
         // console.log("Response Data",response.data)
-        navigate("/", { replace: true });
+        navigate(routes.authroutes.home, { replace: true });
         console.log("Response Data",result.data)
       } else {
         console.log("Error", result.error.message);
@@ -47,7 +48,7 @@ export default function SignIn() {
 
     return (
         <div className="flex dark:bg-black bg-amber-50 items-center justify-center h-screen">
-          <div className="bg-slate-50 p-8 rounded-md shadow-lg shadow-black dark:shadow-amber-50 w-96">
+          <div className="bg-slate-50 p-8 rounded-md shadow-lg shadow-black dark:shadow-amber-50 w-[90%] md:w-[60%] lg:w-[50%] xl:w-[30%] ">
             {isLoading ? (
                 <div className="flex flex-col gap-6 justify-center items-center p-10">              
                 <LoadingIndicator /> 

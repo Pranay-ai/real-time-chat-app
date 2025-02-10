@@ -3,6 +3,8 @@ import { useState, useEffect, useCallback } from "react";
 import LoadingIndicator from "../components/LoadingIndicator";
 import { generateOTP, validateOTP } from "../apifetch/user-api-fetch";
 import OTPInput from "../components/Otp";
+import {routes} from "../utilities/routes"
+
 
 export default function VerifyPage() {
   const { id } = useParams();
@@ -58,7 +60,7 @@ export default function VerifyPage() {
         await new Promise((resolve) => setTimeout(resolve, 3000)); // 2-sec delay
 
 
-        navigate("/sign-in", {replace: true});
+        navigate(routes.authroutes.login, {replace: true});
       } else {
         console.log("OTP Not Verified");
         setOtpError(true);
