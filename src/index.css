@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+/* Light Mode Scrollbar */
+.light-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .light-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light background */
+    border-radius: 10px;
+  }
+  
+  .light-scrollbar::-webkit-scrollbar-thumb {
+    background: #555; /* Dark thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .light-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #333; /* Darker thumb on hover */
+  }
+  
+  /* Dark Mode Scrollbar */
+  .dark-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .dark-scrollbar::-webkit-scrollbar-track {
+    background: #222; /* Dark track */
+    border-radius: 10px;
+  }
+  
+  .dark-scrollbar::-webkit-scrollbar-thumb {
+    background: #ddd; /* Light thumb */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #bbb; /* Slightly darker light thumb */
+  }
+  
+  /* Firefox Support */
+  .light-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #f1f1f1;
+  }
+  
+  .dark-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ddd #222;
+  }
+  
