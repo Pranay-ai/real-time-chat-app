@@ -72,7 +72,7 @@ export default function VerifyPage() {
   }, [id, navigate]);
 
   return (
-    <div className="flex flex-col h-screen bg-amber-50 items-center justify-center dark:bg-black">
+    <div className="flex flex-col h-screen bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 items-center justify-center dark:from-gray-600 dark:via-gray-800 dark:to-gray-950">
       <div className="flex flex-col justify-center items-center bg-white w-1/3 h-1/3 rounded-lg p-4 dark:shadow-amber-50 shadow-xl shadow-black">
         
         {/* ✅ Showing Loading Indicator While OTP is Being Sent */}

@@ -7,5 +7,6 @@ export const routes={
         forgotpassword:"/forgot-password",
         resetpassword:"/reset-password/:id",
         home:"/",
+        profile:"/profile-page"
     },
 }

@@ -7,6 +7,11 @@ export const urls ={
         logout: "/users/sign-out",
         generateotp: "/users/generate-otp",
         validateotp: "/users/verify-otp",
+        sendresetemail:"/users/forgot-password",
+        resetpassword:"/users/reset-password",
+        update:"/users/update-user",
+        search:"/users/search",
+        getUser:"/users",
     }
 
 }

@@ -66,7 +66,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex dark:bg-black bg-amber-50 items-center justify-center h-screen">
+    <div className="flex dark:from-gray-600 dark:via-gray-800 dark:to-gray-950 bg-gradient-to-br from-gray-200 via-gray-300 to-gray-400 items-center justify-center h-screen">
    <div className="bg-slate-50 p-8 rounded-md shadow-lg shadow-black max-h-[70%] overflow-y-auto dark:shadow-amber-50 w-[90%] md:w-[60%] lg:w-[50%] xl:w-[30%] light-scrollbar dark:dark-scrollbar">
 
         <h1 className="text-3xl font-medium text-center">Sign Up</h1>

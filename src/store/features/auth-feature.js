@@ -1,23 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const storedUser = localStorage.getItem("user");
+
 const initialState = {
-    isEmailVerified: null,
-    user: null
+    user: storedUser ? JSON.parse(storedUser) : null, // Retrieve user from localStorage
 };
 
 const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        setEmailVerified(state, action) {
-            state.isEmailVerified = action.payload;
-        },
         setUser(state, action) {
             state.user = action.payload;
-        }
-    }
+            localStorage.setItem("user", JSON.stringify(action.payload)); // Store in localStorage
+        },
+        logoutUser(state) {
+            state.user = null;
+            localStorage.removeItem("user"); // Remove user from storage
+        },
+    },
 });
 
-
-export const { setEmailVerified, setUser } = authSlice.actions;
+export const { setUser, logoutUser } = authSlice.actions;
 export default authSlice.reducer;
